@@ -1,0 +1,49 @@
+/* Global styles for all pages */
+body {
+    background-color: #ECE99C;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .startPage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: #ECE99C;
+    padding: 20px;
+  }
+  
+  .startPage-content {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    height: 90vh;
+    width: 80%;
+    background-color: #BAB63B;
+    background-image: url("C:\Users\safaa\OneDrive\Desktop\שולחן העבודה\תמונות\צילומי מסך\צילום מסך 2024-03-27 060538.png");
+    background-size: cover; /* Adjusts the size of the background image to cover the entire container */
+    background-position: center; /* Centers the background image */
+}
+
+.startPage-buttons {
+    padding: 400px; /* Adjust the padding as needed */
+    padding-left: 320px;
+    display: flex;
+    justify-content: flex-start; 
+}
+.startpage-buttons {
+  font-size: 30px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 200px;
+}
+
+  

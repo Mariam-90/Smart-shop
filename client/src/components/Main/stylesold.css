@@ -1,0 +1,84 @@
+/* עיצוב כללי ובסיסי לקונטיינר הראשי */
+.main-container {
+	top: 20px;
+	position: fixed; /* מקבע את המיקום של ה- .main-container */
+	right: 20px; 
+	display: flex;
+	flex-direction: column; /* מארגן את התוכן בכיוון אנכי */
+	max-width: 450px;
+	margin: 20px auto; /* ממרכז את הקונטיינר ומוסיף מרווח מעלה ומטה */
+	padding: 10px;
+	background-color: #f7f7f7;
+	border-radius: 8px;
+	text-align: right; 
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	bottom: 0;
+    width:400px;
+    height: 410px;
+    z-index: 99999;
+  }
+  .ProductSearch-container{
+	
+  }
+  
+  /* עיצוב טקסטאריה וכפתור להזנת מידע */
+  .products-input textarea, .products-input button {
+	width: 100%;
+	padding: 10px;
+	margin-top: 10px; /* מוסיף מרווח מעלה בלבד, כדי לשמור על זרימה טובה */
+	border-radius: 25px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+  }
+  
+  .products-input textarea {
+	height: 150px; /* הגדלת גובה הטקסטאריה לנוחות כתיבה */
+	resize: vertical; /* מאפשר שינוי גודל רק בכיוון אנכי */
+	margin-bottom: 10px; /* מוסיף מרווח מתחת */
+	text-align: right; 
+  }
+  
+  .products-input button {
+	background-color: #007bff;
+	color: white;
+	cursor: pointer;
+	border: none;
+	transition: background-color 0.2s ease;
+	/* margin-top: 20px; מוסיף רווח מעל לכפתור */
+	margin-bottom: 20px;
+  }
+  
+  .products-input button:hover {
+	background-color: #0056b3;
+  }
+  
+  /* עיצוב הרשימה שמתקבלת אחרי חיפוש */
+  .list-component {
+	width: 100%; /* מתאים את הרוחב לרוחב הקונטיינר האב */
+	margin-top: 20px; /* מרווח מהקומפוננטה שלמעלה */
+	background-color: white;
+	border: 1px solid #ccc;
+	padding: 10px;
+	box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+  }
+  
+  /* עיצוב פריטי המוצר ברשימה */
+  .product-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	margin: 10px 0;
+	background-color: #fff;
+	border-radius: 4px;
+	box-shadow: 0 1px 310px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-name, .product-price {
+	margin: 0 5px;
+  }
+  
+  .product-price {
+	color: #28a745; /* צבע ירוק למחירים */
+  }
+  

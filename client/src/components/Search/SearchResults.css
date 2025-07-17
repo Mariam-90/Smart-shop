@@ -1,0 +1,67 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* יצירת עמודות גמישות, מינימום רוחב לקלף */
+  gap: 20px; /* מרווח בין הקלפים */
+  padding: 20px; /* ריווח פנימי */
+  justify-content: center; /* ממרכז את הקלפים */
+  max-width: 1200px; /* רוחב מרבי */
+  margin: 0 auto; /* ממרכז את המכולה */
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column; /* סידור אלמנטים בצורה אנכית */
+  align-items: center;
+  border: 1px solid #ddd; /* גבול לקלף */
+  padding: 15px; /* ריווח פנימי */
+  border-radius: 8px; /* עיגול פינות */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* צל */
+  background-color: #fff; /* צבע רקע לבן */
+  transition: transform 0.2s, box-shadow 0.2s; /* אנימציה לקלף */
+  width: 100%; /* קובע רוחב מלא */
+  max-width: 200px; /* מגביל את הרוחב המרבי של הקלף */
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* אפקט הגדלה בעת ריחוף */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* הגדלת הצל בעת ריחוף */
+}
+
+.product-image {
+  width: 90px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px; /* מרווח תחתון */
+  border-radius: 4px; /* עיגול פינות */
+}
+
+.product-info {
+  text-align: center; /* מרכז את הטקסט */
+}
+
+.product-info h5 {
+  margin: 8px 0 4px; /* ריווח פנימי מעל ומתחת לכותרת */
+  color: #333; /* צבע כותרת */
+  font-size: 16px;
+}
+
+.product-info p {
+  margin: 4px 0; /* ריווח פנימי מעל ומתחת לפסקאות */
+  color: #666; /* צבע טקסט */
+  font-size: 14px;
+}
+
+/* עיצוב רספונסיבי */
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr; /* עמודה אחת למסכים קטנים */
+  }
+
+  .product-search-container {
+    flex-direction: column; /* סידור אנכי למסכים קטנים */
+  }
+
+  .product-search-container .search-input {
+    margin-bottom: 10px; /* מרווח תחתון בין השדה לכפתור */
+  }
+}

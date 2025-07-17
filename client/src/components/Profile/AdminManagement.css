@@ -1,0 +1,143 @@
+.admin-management-container,
+.message-management-container {
+    padding: 2%;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.admin-management-container h1,
+.message-management-container h2 {
+    text-align: right;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.search-bar {
+    max-width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.user-table,
+.message-management-container .table {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.user-table thead,
+.message-management-container .table thead {
+    background-color: #e9ecef;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.user-table tbody tr,
+.message-management-container .table tbody tr {
+    vertical-align: middle;
+    font-size: 1em;
+}
+
+.user-table .btn,
+.message-management-container .btn {
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .admin-management-container,
+    .message-management-container {
+        padding: 1.5%;
+    }
+    
+    .admin-management-container h1,
+    .message-management-container h2 {
+        font-size: 1.75em;
+    }
+
+    .user-table thead,
+    .message-management-container .table thead {
+        font-size: 1.1em;
+    }
+
+    .user-table tbody tr,
+    .message-management-container .table tbody tr {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 992px) {
+    .admin-management-container,
+    .message-management-container {
+        padding: 1%;
+    }
+    
+    .admin-management-container h1,
+    .message-management-container h2 {
+        font-size: 1.5em;
+    }
+
+    .user-table thead,
+    .message-management-container .table thead {
+        font-size: 1em;
+    }
+
+    .user-table tbody tr,
+    .message-management-container .table tbody tr {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-management-container,
+    .message-management-container {
+        padding: 0.5%;
+    }
+    
+    .admin-management-container h1,
+    .message-management-container h2 {
+        font-size: 1.25em;
+    }
+
+    .user-table thead,
+    .message-management-container .table thead {
+        font-size: 0.9em;
+    }
+
+    .user-table tbody tr,
+    .message-management-container .table tbody tr {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 576px) {
+    .admin-management-container,
+    .message-management-container {
+        padding: 0.25%;
+    }
+    
+    .admin-management-container h1,
+    .message-management-container h2 {
+        font-size: 1em;
+    }
+
+    .user-table thead,
+    .message-management-container .table thead {
+        font-size: 0.8em;
+    }
+
+    .user-table tbody tr,
+    .message-management-container .table tbody tr {
+        font-size: 0.7em;
+    }
+
+    .search-bar {
+        max-width: 100%;
+    }
+}

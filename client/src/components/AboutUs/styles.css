@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
+
+.about-container {
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  text-align: right;
+  direction: rtl;
+  font-family: 'Alef', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.about-container:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2); /* צל גדול יותר בריחוף */
+}
+
+.about-container h1 {
+  color: #2c3e50;
+  font-size: 2.8em;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bolder;
+  border-bottom: 2px solid #16a9d6; /* קו תחתון צבעוני */
+  display: inline-block;
+}
+
+.about-container p {
+  color: #34495e;
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-container h2 {
+  color: #16a9d6;
+  font-size: 2.2em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.about-container h2::before {
+  content: "★"; /* אייקון לפני הכותרת */
+  color: #f39c12;
+  position: absolute;
+  right: -30px;
+  top: 0;
+}
+
+.about-container ul, .about-container ol {
+  padding: 0 20px; /* ריווח פנימי */
+}
+
+.about-container ul li, .about-container ol li {
+  color: #34495e;
+  font-size: 1.1em;
+  padding: 10px 0;
+  position: relative;
+  padding-right: 5px;
+  list-style: none; /* הסרת תבליטים ברשימות */
+}
+
+.about-container ul li::before, .about-container ol li::before {
+  content: "✔"; /* תבליט מותאם אישית */
+  color: #16a9d6;
+  position: absolute;
+  right: -25px;
+  font-size: 1.2em;
+}
+
+.about-container a {
+  color: #16a9d6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about-container a:hover {
+  text-decoration: underline;
+  color: #138bb0; /* צבע כהה יותר בריחוף */
+}
+
+.about-container ol li::before {
+  content: "➤"; /* תבליט מותאם אישית לאוליד */
+  color: #16a9d6;
+}
+
+.about-container ol {
+  counter-reset: list; /* אתחול מונה מותאם אישית */
+}
+
+.about-container ol li {
+  counter-increment: list;
+}
+
+.about-container ol li::before {
+  content: counter(list) ". "; /* מספר מותאם אישית */
+  font-weight: bold;
+  color: #16a9d6;
+  position: absolute;
+  right: -35px;
+}
+
+.about-container h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #16a9d6;
+  margin-top: 5px;
+}
+
+.about-container h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #16a9d6;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 20px;
+  }
+
+  .about-container h1 {
+    font-size: 2em;
+  }
+
+  .about-container h2 {
+    font-size: 1.8em;
+  }
+
+  .about-container p, .about-container ul li, .about-container ol li {
+    font-size: 1em;
+  }
+}

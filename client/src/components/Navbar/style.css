@@ -1,0 +1,56 @@
+/* navbar.css */
+.navbar-custom_1 {
+    padding: 0px 0;
+}
+
+.navbar-logo {
+    height: 60px; /* הגדלת הלוגו */
+}
+
+.navbar-custom {
+    background-color:rgb(230, 252, 252)!important; /* צבע רקע חדש ל-Navigation Bar */
+    color: #fff;
+    width: 100%; /* שמירה על גודל קבוע */
+    z-index: 1000;
+    white-space: nowrap; /* שמירה על הטקסט בשורה אחת */
+}
+
+.navbar-custom .navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* גובה הקונטיינר של הלוגו */
+    width: 200px; /* רוחב הקונטיינר של הלוגו */
+    border-radius: 50%; /* עיגול הלוגו */
+}
+
+.navbar-custom .navbar-brand img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* שמירה על פרופורציות התמונה */
+}
+
+.navbar-custom .nav-link {
+    color: #000000 !important;
+    display: inline-flex; /* שמירה על פריטים בשורה */
+    align-items: center; /* יישור למרכז אנכית */
+    padding: 10px 15px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    background-color: #ffffff !important; /* צבע רקע כאשר נעים מעל הפריט */
+    color: rgb(230, 252, 252) !important;
+}
+
+.navbar-custom .nav-link.active {
+    color: #16a9d6 !important; /* צבע הקישור הנלחץ */
+}
+
+@media (max-width: 768px) {
+    .navbar-custom .nav-link {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+}

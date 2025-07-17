@@ -1,0 +1,153 @@
+.user-management-container {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #e3f2fd; /* צבע רקע בהיר יותר */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-management-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #1565c0; /* צבע כותרת */
+  text-align: center;
+}
+
+.list-container {
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #ffffff; /* רקע לבן לניגודיות טובה יותר */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.list-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.basket-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+
+.basket-icon {
+  font-size: 28px; /* גודל האייקון */
+  margin-right: 15px; /* רווח גדול יותר בין האייקון לכותרת */
+  color: #1976d2; /* צבע האייקון */
+}
+
+.list-container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #1976d2; /* צבע כותרת הרשימה */
+}
+
+.list-container ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+
+.list-container ul li {
+  font-size: 16px;
+  margin-bottom: 5px;
+  background-color: #f1f8e9; /* רקע ירוק בהיר לפריטים */
+  padding: 8px 12px; /* ריווח פנימי לפריטים */
+  border-radius: 4px;
+  color: #4caf50; /* צבע טקסט הפריטים */
+}
+
+.user-management-container button {
+  font-size: 14px;
+  margin: 5px;
+}
+
+.search-results {
+  margin-top: 20px;
+}
+
+/* עיצוב מודאל */
+/* עיצוב מודאל */
+.modal-dialog {
+  display: flex;
+  align-items: center; /* מרכז את המודאל בצורה אנכית */
+  justify-content: center; /* מרכז את המודאל בצורה אופקית */
+  min-height: 100vh; /* גובה מינימלי של 100% כדי להיות במרכז */
+  margin: 0; /* מבטל את המרווחים כדי למרכז לחלוטין */
+}
+
+.modal-header {
+  background-color: #16a9d6 ; /* צבע רקע לכותרת המודאל */
+  color: white; /* צבע טקסט לכותרת המודאל */
+  border-bottom: none; /* הסרת קו תחתון */
+  border-radius: 8px 8px 0 0; /* קצוות מעוגלים בחלק העליון */
+}
+
+
+.modal-title {
+  font-size: 20px;
+}
+
+.modal-body {
+  padding: 20px;
+  background-color: #e3f2fd; /* צבע רקע לגוף המודאל */
+}
+
+.modal-body form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* מרווח בין כל קבוצת פריט */
+  text-align: left;
+}
+
+.modal-body form .form-group {
+  margin-bottom: 15px;
+}
+
+.modal-body form .form-control {
+  border-radius: 4px; /* קצוות מעוגלים לשדות הטקסט */
+  border: 1px solid #cfd8dc; /* צבע גבול בהיר */
+}
+
+.modal-footer {
+  background-color: #e3f2fd; /* צבע רקע לכפתורים במודאל */
+  border-top: none; /* הסרת קו עליון */
+  border-radius: 0 0 8px 8px; /* קצוות מעוגלים בחלק התחתון */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-footer button {
+  border-radius: 20px; /* כפתורים מעוגלים */
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.modal-footer .btn-primary {
+  background-color:  #16a9d6 ;
+  border-color:  #16a9d6 ;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color:  #16a9d6 ; /* גוון כהה יותר בעת ריחוף */
+  border-color:  #16a9d6 ;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #cfd8dc; /* צבע רקע לכפתור סגירה */
+  border-color: #cfd8dc;
+  color: #333; /* צבע טקסט כהה לכפתור סגירה */
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #b0bec5; /* גוון כהה יותר לכפתור סגירה בעת ריחוף */
+  border-color: #b0bec5;
+}

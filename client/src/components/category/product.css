@@ -1,0 +1,135 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  max-width: 200px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 90px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.product-info {
+  text-align: center;
+}
+
+.product-title {
+  margin: 8px 0 4px;
+  color: #333;
+  font-size: 16px;
+}
+
+.product-price,
+.product-source {
+  margin: 4px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.add-to-list-button {
+  background-color: #1976d2;
+  color: white;
+  margin-top: 1rem;
+  transition: background-color 0.2s;
+}
+
+.add-to-list-button:hover {
+  background-color: #115293;
+}
+
+.popover-content {
+  position: relative; /* להבטיח שהאייקון ממוקם נכון */
+  padding: 16px;
+  width: 250px;
+  background-color: #fff; /* רקע לבן */
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* צל קל */
+  color: #333; /* טקסט כהה */
+  font-family: 'Arial', sans-serif; /* פונט */
+}
+
+.popover-content h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #333; /* צבע כותרת כהה */
+  text-align: center;
+  font-weight: bold;
+}
+
+.new-list-input {
+  margin-top: 1rem;
+  background-color: #fff; /* רקע לבן */
+  color: #333; /* טקסט כהה */
+  border: 1px solid #ddd; /* מסגרת בהירה */
+}
+
+.MuiInputBase-root {
+  color: #333; /* צבע טקסט כהה לשדה הטקסט */
+}
+
+.MuiInputLabel-root {
+  color: #333; /* צבע כהה לתווית */
+}
+
+.MuiSelect-root {
+  background-color: #fff; /* רקע לבן לבחירה */
+  color: #333; /* טקסט כהה */
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #ddd; /* מסגרת בהירה */
+}
+
+.MuiSelect-icon {
+  color: #333; /* צבע האייקון כהה */
+}
+
+.save-button {
+  background-color: #1976d2; /* צבע כפתור */
+  color: white;
+  margin-top: 1rem;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.save-button:hover {
+  background-color: #115293; /* צבע כפתור בריחוף */
+}
+
+.close-icon-button {
+  color: #333; /* צבע כהה עבור האייקון */
+  transition: color 0.2s; /* מעבר צבע חלק */
+}
+
+.close-icon-button:hover {
+  color: #d32f2f; /* צבע אדום כהה בריחוף */
+}
+
+.MuiAlert-root {
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* רקע חצי שקוף להודעה כהה */
+  color: #333; /* צבע טקסט כהה להודעה */
+}
+
+@media (max-width: 600px) {
+  .popover-content {
+    width: 220px; /* התאמת גודל למסכים קטנים */
+  }
+}

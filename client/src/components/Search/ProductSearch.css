@@ -1,0 +1,78 @@
+.product-search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to the start (right in RTL) */
+  gap: 20px;
+  padding: 20px;
+  direction: rtl;
+  background-color: #ffffff; /* Light background for contrast */
+  width: 100%; /* Full width */
+  max-width: 100%; /* Set to 100% to match the page width */
+  margin: 0 10px; /* Margin like the carousel */
+  box-sizing: border-box; /* Ensure padding and borders are included in the width */
+}
+
+.motivation-article {
+  width: 100%; /* Full width */
+  padding: 30px; /* More padding for a spacious feel */
+  text-align: right;
+  background-color: #ffffff; /* White background for the article */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  border-top: 7px solid #16a9d6; /* Accent color at the top */
+  position: relative; /* Relative positioning for elements like icons */
+}
+
+.article-title {
+  font-weight: bold; /* Bold title for emphasis */
+  color: #333; /* Darker color for readability */
+  margin-bottom: 15px; /* Space below title */
+}
+
+.article-text {
+  font-size: 1.1rem; /* Slightly larger text for better readability */
+  color: #555; /* Softer text color */
+  margin-bottom: 20px; /* Space below text */
+  line-height: 1.6; /* Better line spacing */
+}
+
+.search-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%; /* Full width */
+  margin-top: 15px; /* Space above the search block */
+  border-top: 1px solid #e0e0e0; /* Subtle border to separate from text */
+  padding-top: 15px; /* Padding above the search block */
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  direction: rtl;
+  background-color: #f7f7f7; /* Slight background color for input */
+  border-radius: 30px; /* Rounded corners for the input */
+}
+
+.search-icon {
+  padding: 10px;
+  background-color: #16a9d6; /* Colored background for the icon button */
+  color: white; /* White color for the icon */
+  border-radius: 50%; /* Round icon button */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.search-icon:hover {
+  background-color: #138bb0; /* Darker shade on hover */
+}
+
+@media (max-width: 600px) {
+  .search-block {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-icon {
+    margin-top: 10px;
+  }
+}

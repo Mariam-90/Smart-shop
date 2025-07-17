@@ -1,0 +1,41 @@
+.tzunai-management-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tzunai-management-container h1 {
+    font-size: 24px;
+    font-weight:bolder;   
+     margin-bottom: 10px;
+}
+.tzunai-management-container h2 {
+    font-size: 18px;
+    font-weight:lighter;
+    margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.article-form, .recipe-form {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.article-form .mb-3, .recipe-form .mb-3 {
+    margin-bottom: 1rem;
+    font-size: 14px;
+}
+
+.article-form .btn, .recipe-form .btn {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.alert {
+    margin-top: 10px;
+    font-size: 14px;
+}

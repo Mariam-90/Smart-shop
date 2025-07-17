@@ -1,0 +1,10 @@
+.category-image {
+    width: 100%; /* הגדלת רוחב התמונה */
+    height: auto;
+}
+
+.category-title {
+    font-size: 14px; /* הגדלת גודל הפונט */
+    font-weight: bold;
+    color: #333;
+}

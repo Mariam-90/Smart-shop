@@ -1,0 +1,21 @@
+{
+  "name": "smartshoop",
+  "version": "1.0.0",
+  "description": "A comprehensive description of your project.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm install --prefix client && npm install --prefix server && npm install --prefix puppeteer",
+    "test": "mocha 'test/**/*.mjs'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mariam-90/FinalProject.git"
+  },
+  "author": "Mariam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mariam-90/FinalProject/issues"
+  },
+  "homepage": "https://github.com/Mariam-90/FinalProject#readme"
+}

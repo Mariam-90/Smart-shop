@@ -1,0 +1,82 @@
+/* App.css */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    direction: rtl;
+    height: 100%;
+    background-color: rgb(230, 252, 252) !important; /* צבע רקע לכל העמוד */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+#root {
+    min-height: 100%;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-container {
+    flex: 1; /* כדי להבטיח שהקונטיינר יתפוס את שארית הגובה */
+    padding: 20px;
+    margin-top: 160px; /* התאמה כדי למנוע כיסוי תוכן על ידי הניווט בר */
+    background-color: #ffffff;
+}
+
+main {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-height: calc(100vh - 200px); /* גובה מינימלי כדי להבטיח שהתוכן לא יכוסה */
+}
+
+.link {
+    display: inline-flex; /* שמירה על פריטים בשורה */
+    align-items: center; /* יישור למרכז אנכית */
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link:hover {
+    background-color: #ffffff; /* צבע רקע כאשר נעים מעל הקישור */
+    color: #000000;
+}
+
+.link.active {
+    color: #16a9d6; /* צבע הקישור הנלחץ */
+}
+
+.icon {
+    font-size: 20px;
+    margin-left: 8px; /* ריווח בין האיקון לטקסט */
+}
+
+@media (max-width: 768px) {
+    .link {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+
+    .icon {
+        font-size: 18px;
+    }
+}

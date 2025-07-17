@@ -1,0 +1,80 @@
+.Container {
+  margin-top: 20px;
+}
+
+.cheapest-source {
+  padding: 20px;
+  border-radius: 4px;
+  text-align:right;
+  border: 1px solid #16a9d6;
+  margin-bottom: 30px;
+}
+
+.scrollable {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.source-title {
+  color: #16a9d6;
+  font-weight: bold;
+  border-bottom: 2px solid #16a9d6;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.total-price {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto; /* הותאם לגובה אוטומטי */
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.product-image {
+  object-fit: contain;
+  width: 150px;
+  height: 150px; /* הקטנת גובה התמונות */
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-card .MuiCardContent-root {
+  padding: 15px;
+  text-align: center;
+}
+
+.product-card .MuiTypography-h6 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-card .MuiTypography-body2 {
+  color: #555;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    height: auto;
+  }
+
+  .product-image {
+    height: 120px; /* הקטנת גובה התמונות במסכים קטנים יותר */
+  }
+}
