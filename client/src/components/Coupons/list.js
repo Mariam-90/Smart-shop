@@ -16,7 +16,7 @@ form.addEventListener('submit', async (event) => {
 async function fetchProducts(products) {
     const query = { products };
     try {
-        const response = await fetch("http://localhost:3000/api/api/productsList", {
+        const response = await fetch("http://localhost:3000/api/productsList", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(query)

@@ -22,3 +22,8 @@ rad.json
 TestResults.xml
 **/node_modules/
 node_modules
+# Local configuration and generated output
+.env
+.env.*
+!.env.example
+**/build/

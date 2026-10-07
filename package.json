@@ -5,17 +5,20 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "install": "npm install --prefix client && npm install --prefix server && npm install --prefix puppeteer",
-    "test": "mocha 'test/**/*.mjs'"
+    "install": "npm install --prefix client && npm install --prefix server",
+    "start": "npm start --prefix server",
+    "start:client": "npm start --prefix client",
+    "build": "npm run build --prefix client",
+    "test": "npm test --prefix server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mariam-90/FinalProject.git"
+    "url": "git+https://github.com/Mariam-90/Smart-shop.git"
   },
   "author": "Mariam",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mariam-90/FinalProject/issues"
+    "url": "https://github.com/Mariam-90/Smart-shop/issues"
   },
-  "homepage": "https://github.com/Mariam-90/FinalProject#readme"
+  "homepage": "https://github.com/Mariam-90/Smart-shop#readme"
 }

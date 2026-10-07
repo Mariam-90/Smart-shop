@@ -16,7 +16,7 @@ const contactRoutes = require("./routes/contact");
 const adminRoutes = require("./routes/admin");
 
 // database connection
-connection();
+
 const axios = require('axios');
 
 // middlewares
@@ -131,7 +131,7 @@ const findCheapestProductsByStore = (productList, stores) => {
             }
             
             let cheapestProduct = store.products.reduce((cheapest, currentProduct) => {
-                if (currentProduct.ItemName.toLowerCase().includes(product) && (!cheapest || parseFloat(currentProduct.ItemPrice) < parseFloat(cheapest.ItemPrice))) {
+                if (typeof currentProduct.ItemName === 'string' && currentProduct.ItemName.toLowerCase().includes(product) && (!cheapest || parseFloat(currentProduct.ItemPrice) < parseFloat(cheapest.ItemPrice))) {
                     return currentProduct;
                 }
                 return cheapest;
@@ -148,7 +148,8 @@ const findCheapestProductsByStore = (productList, stores) => {
 
 // נתיב לחיפוש מוצרים
 app.get('/api/search', (req, res) => {
-  const query = req.query.q.toLowerCase();
+  const query = typeof req.query.q === 'string' ? req.query.q.trim().toLowerCase() : '';
+  if (!query) return res.status(400).json({ message: 'A search query is required' });
   console.log(`Search query received: ${query}`);
   const products = readJsonFiles(path.join(__dirname, 'json_files_directory')); // ודא שהתיקייה נכונה
   const results = products
@@ -162,7 +163,7 @@ app.post('/api/productsList', async (req, res) => {
     try {
         console.log(req.body);
         const searchQueries = req.body.products;
-        if (!searchQueries || searchQueries.length === 0) {
+        if (!Array.isArray(searchQueries) || searchQueries.length === 0 || searchQueries.some(query => typeof query !== 'string' || !query.trim())) {
             return res.status(400).send({ message: 'No search queries provided' });
         }
 
@@ -181,11 +182,11 @@ app.post('/api/productsList', async (req, res) => {
         });
 
         const storeArray = Object.values(stores);
-        const results = findCheapestProductsByStore(searchQueries, storeArray);
+        const results = findCheapestProductsByStore(searchQueries.map(query => query.trim().toLowerCase()), storeArray);
 
         const sourceToPrice = {};
         Object.keys(results).forEach(source => {
-            sourceToPrice[source] = results[source].reduce((total, product) => total + parseFloat(product.ItemPrice.replace(/[^0-9.-]+/g, "")), 0);
+            sourceToPrice[source] = results[source].reduce((total, product) => total + parseFloat(String(product.ItemPrice).replace(/[^0-9.-]+/g, "")), 0);
         });
 
         const [cheapestSource, cheapestPrice] = Object.entries(sourceToPrice).reduce((acc, [source, price]) => {
@@ -226,5 +227,11 @@ app.post('/api/cart/checkout', (req, res) => {
   // Implement your logic here
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+if (require.main === module) {
+  const port = process.env.PORT || 3000;
+  connection().then(() => {
+    app.listen(port, () => console.log(`Listening on port ${port}...`));
+  });
+}
+
+module.exports = app;
