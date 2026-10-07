@@ -50,9 +50,10 @@ const ListComponent = ({ searchResults }) => {
         return <div>Loading...</div>;
     }
 
-    const { sourcesProducts, sourcesPrices, cheapestSource, cheapestPrice } = searchResults;
+    const { sourcesProducts, sourcesPrices, cheapestSource, cheapestPrice, sourcesMissingProducts = {} } = searchResults;
 
     const getImageUrl = (url) => {
+        if (!url) return undefined;
         if (url.startsWith('http')) {
             return url;
         } else {
@@ -69,10 +70,16 @@ const ListComponent = ({ searchResults }) => {
                     <Typography variant="h6">המחיר הזול ביותר: ₪{Number(cheapestPrice).toFixed(2)}</Typography>
                 </Box>
             )}
+            {!cheapestSource && (
+                <Typography role="status">לא נמצאה חנות עם כל המוצרים בסל. המחירים המוצגים הם עבור המוצרים הזמינים בלבד.</Typography>
+            )}
             {Object.keys(sourcesProducts).sort((a, b) => sourcesPrices[a] - sourcesPrices[b]).map((source) => (
                 <Box my={4} key={source} className="scrollable">
                     <Typography variant="h5" gutterBottom className="source-title">מקור: {source}</Typography>
-                    <Typography variant="h6" gutterBottom className="total-price">מחיר כולל: ₪{Number(sourcesPrices[source]).toFixed(2)}</Typography>
+                    <Typography variant="h6" gutterBottom className="total-price">{sourcesMissingProducts[source]?.length ? 'מחיר המוצרים הזמינים' : 'מחיר כולל'}: ₪{Number(sourcesPrices[source]).toFixed(2)}</Typography>
+                    {sourcesMissingProducts[source]?.length > 0 && (
+                        <Typography color="error">מוצרים חסרים: {sourcesMissingProducts[source].join(', ')}</Typography>
+                    )}
                     <Grid container spacing={2}>
                         {Array.isArray(sourcesProducts[source]) && sourcesProducts[source].map((product, index) => (
                             <Grid item key={index} xs={12} sm={6} md={4}>

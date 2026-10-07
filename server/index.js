@@ -119,32 +119,7 @@ app.get('/api/category/:category', (req, res) => {
   res.json(categoryProducts);
 });
 
-// פונקציה למציאת המוצרים הזולים ביותר לכל סופר
-const findCheapestProductsByStore = (productList, stores) => {
-    let results = {};
-
-    productList.forEach(product => {
-        stores.forEach(store => {
-            let storeName = store.name;
-            if (!results[storeName]) {
-                results[storeName] = [];
-            }
-            
-            let cheapestProduct = store.products.reduce((cheapest, currentProduct) => {
-                if (typeof currentProduct.ItemName === 'string' && currentProduct.ItemName.toLowerCase().includes(product) && (!cheapest || parseFloat(currentProduct.ItemPrice) < parseFloat(cheapest.ItemPrice))) {
-                    return currentProduct;
-                }
-                return cheapest;
-            }, null);
-
-            if (cheapestProduct) {
-                results[storeName].push(cheapestProduct);
-            }
-        });
-    });
-
-    return results;
-};
+const compareBaskets = require('./utils/compareBaskets');
 
 // נתיב לחיפוש מוצרים
 app.get('/api/search', (req, res) => {
@@ -182,25 +157,7 @@ app.post('/api/productsList', async (req, res) => {
         });
 
         const storeArray = Object.values(stores);
-        const results = findCheapestProductsByStore(searchQueries.map(query => query.trim().toLowerCase()), storeArray);
-
-        const sourceToPrice = {};
-        Object.keys(results).forEach(source => {
-            sourceToPrice[source] = results[source].reduce((total, product) => total + parseFloat(String(product.ItemPrice).replace(/[^0-9.-]+/g, "")), 0);
-        });
-
-        const [cheapestSource, cheapestPrice] = Object.entries(sourceToPrice).reduce((acc, [source, price]) => {
-            return (acc[1] > price) ? [source, price] : acc;
-        }, ['', Infinity]);
-
-        console.log(`The cheapest basket comes from ${cheapestSource} and costs ${cheapestPrice} shekels.`);
-
-        res.json({
-            sourcesProducts: results,
-            sourcesPrices: sourceToPrice,
-            cheapestSource: cheapestSource,
-            cheapestPrice: cheapestPrice
-        });
+        res.json(compareBaskets(searchQueries, storeArray));
 
     } catch (error) {
         console.error("Error during search:", error);
